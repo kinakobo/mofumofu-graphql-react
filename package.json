@@ -5,19 +5,27 @@
   "private": true,
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "graphql:schema": "apollo schema:download --endpoint=http://localhost:3000/graphql graphql-schema.json",
+    "graphql:codegen": "apollo client:codegen --localSchemaFile=graphql-schema.json --target=typescript --includes=src/queries/*.ts --tagName=gql --addTypename --globalTypesFile=src/queries/types/graphql-global-types.ts types"
   },
   "dependencies": {
+    "apollo-boost": "^0.1.28",
+    "graphql": "^14.1.1",
     "react": "^16.7.0",
+    "react-apollo": "^2.4.1",
     "react-dom": "^16.7.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "@types/graphql": "^14.0.7",
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
     "@types/redux-logger": "^3.0.6",
+    "apollo": "^2.5.1",
+    "apollo-codegen": "^0.20.2",
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.15.3",
     "tslint": "^5.12.1",
