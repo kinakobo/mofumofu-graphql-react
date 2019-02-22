@@ -1,0 +1,16 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "object-literal-sort-keys": false, // オブジェクトのキーの順序は気にしない
+    "no-implicit-dependencies": [true, "dev"], // peerDependencies の代わりに devDependencies をみるように変更
+    "interface-name": [true, "never-prefix"], // Interface の接頭辞に I をつけるのは少数派なため変更
+    "member-access": [true, "no-public"], // public メソッドはデフォルトなので許可する
+    "no-empty": [true, "allow-empty-functions"],
+    "member-ordering": false,
+    "no-empty-interface": false,
+    "curly": false
+  },
+  "rulesDirectory": []
+}
